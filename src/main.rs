@@ -19,6 +19,18 @@ fn co_prime(mut a: u64, mut b: u64) -> bool {
     a == 1
 }
 
+fn bottlesOfBeer(a: u8) {
+    println!("{} bottles of beer on the wall,", a);
+    println!("{} bottles of beer on the wall,", a);
+    println!("Take one down, pass it around,");
+    println!("{} bottles of beer on the wall.", a);
+
+    if a > 1 {
+        print!("\n");
+        bottlesOfBeer(a-1);
+    }
+}   
+
 fn main() {
     println!("Problema 1");
     let mut num: u64 = 2;
@@ -39,4 +51,6 @@ fn main() {
         }
         num += 1;
     }
+
+    bottlesOfBeer(100);
 }
