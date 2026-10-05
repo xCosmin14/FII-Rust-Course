@@ -1,12 +1,16 @@
 fn is_prime(n: u64) -> bool {
-    if n < 2 {return false;}
+    if n < 2 {
+        return false;
+    }
 
     let mut i: u64 = 2;
     while i * i <= n {
-        if n % i == 0 {return false;}
+        if n % i == 0 {
+            return false;
+        }
         i += 1;
     }
-    
+
     true
 }
 
@@ -22,14 +26,19 @@ fn co_prime(mut a: u64, mut b: u64) -> bool {
 fn bottles_of_beer(a: u8) {
     println!("{} bottles of beer on the wall,", a);
     println!("{} bottles of beer on the wall,", a);
-    println!("Take one down, pass it around,");
-    println!("{} bottles of beer on the wall.", a);
+
+    if a > 1 {
+        println!("Take one down, pass it around,");
+        println!("{} bottles of beer on the wall.", a);
+    } else {
+        println!("No bottles of beer on the wall.");
+    }
 
     if a > 1 {
         print!("\n");
-        bottles_of_beer(a-1);
+        bottles_of_beer(a - 1);
     }
-}   
+}
 
 fn main() {
     println!("Problema 1");
@@ -44,7 +53,7 @@ fn main() {
     num = 1;
 
     while num < 100 {
-        let mut num2 = 1; 
+        let mut num2 = 1;
         while num2 < 100 {
             println!("{} and {}, {}", num, num2, co_prime(num, num2));
             num2 += 1;
